@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 99%;
+    --foreground: 220 20% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 10%;
+
+    --primary: 220 14% 20%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 220 10% 96%;
+    --secondary-foreground: 220 14% 20%;
+
+    --muted: 220 10% 96%;
+    --muted-foreground: 220 10% 46%;
+
+    --accent: 220 10% 94%;
+    --accent-foreground: 220 14% 20%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 220 14% 20%;
+
+    --radius: 0.5rem;
+
+    /* Finance tokens */
+    --income: 152 60% 40%;
+    --income-bg: 152 60% 95%;
+    --expense: 0 65% 50%;
+    --expense-bg: 0 65% 96%;
+    --neutral: 220 10% 46%;
+    --neutral-bg: 220 10% 97%;
+    --internal: 215 60% 50%;
+    --internal-bg: 215 60% 96%;
+    --withdraw: 30 80% 50%;
+    --withdraw-bg: 30 80% 96%;
+
+    /* Team colors */
+    --team-aaa: 210 70% 50%;
+    --team-aaa-bg: 210 70% 95%;
+    --team-bbb: 160 55% 42%;
+    --team-bbb-bg: 160 55% 94%;
+    --team-ccc: 280 50% 55%;
+    --team-ccc-bg: 280 50% 95%;
+    --team-ddd: 25 75% 50%;
+    --team-ddd-bg: 25 75% 95%;
+    --team-eee: 340 60% 52%;
+    --team-eee-bg: 340 60% 95%;
+    --team-csb: 220 14% 40%;
+    --team-csb-bg: 220 14% 95%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 20% 7%;
+    --foreground: 0 0% 95%;
+    --card: 220 20% 9%;
+    --card-foreground: 0 0% 95%;
+    --popover: 220 20% 9%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 0 0% 95%;
+    --primary-foreground: 220 20% 7%;
+    --secondary: 220 15% 15%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 220 15% 15%;
+    --muted-foreground: 220 10% 55%;
+    --accent: 220 15% 15%;
+    --accent-foreground: 0 0% 95%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 0 0% 80%;
+    --income: 152 55% 45%;
+    --income-bg: 152 40% 15%;
+    --expense: 0 60% 55%;
+    --expense-bg: 0 40% 15%;
+    --neutral: 220 10% 55%;
+    --neutral-bg: 220 10% 15%;
+    --internal: 215 55% 55%;
+    --internal-bg: 215 40% 15%;
+    --withdraw: 30 75% 55%;
+    --withdraw-bg: 30 40% 15%;
+
+    /* Team colors (dark) */
+    --team-aaa: 210 65% 60%;
+    --team-aaa-bg: 210 50% 15%;
+    --team-bbb: 160 50% 50%;
+    --team-bbb-bg: 160 40% 15%;
+    --team-ccc: 280 45% 65%;
+    --team-ccc-bg: 280 35% 15%;
+    --team-ddd: 25 70% 58%;
+    --team-ddd-bg: 25 50% 15%;
+    --team-eee: 340 55% 60%;
+    --team-eee-bg: 340 40% 15%;
+    --team-csb: 220 14% 60%;
+    --team-csb-bg: 220 14% 15%;
+    --sidebar-background: 220 20% 7%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 0 0% 95%;
+    --sidebar-primary-foreground: 220 20% 7%;
+    --sidebar-accent: 220 15% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 220 15% 18%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-size: clamp(14px, 0.35vw + 12.5px, 16px);
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  .tabular-nums {
+    overflow-wrap: anywhere;
+  }
+}
+
+@layer utilities {
+  .text-fluid-number {
+    font-size: clamp(1.125rem, 2.1vw, 1.875rem);
+    line-height: 1.2;
+  }
+
+  .text-fluid-number-lg {
+    font-size: clamp(1.25rem, 2.6vw, 2.2rem);
+    line-height: 1.15;
+  }
+
+  .p-fluid-card {
+    padding: clamp(0.75rem, 1.8vw, 1.25rem);
+  }
+}
