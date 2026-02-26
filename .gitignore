@@ -29,3 +29,5 @@ dist-ssr
 *.sqlite
 *.sqlite3
 vitest.config.ts.timestamp-*.mjs
+supabase/.temp/
+supabase/.branches/
